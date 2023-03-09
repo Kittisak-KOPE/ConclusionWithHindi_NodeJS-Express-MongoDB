@@ -4,6 +4,7 @@
 
 #### Modules System
 
+<details><summary>Modules System</summary>
 index.js
 
 ```
@@ -48,11 +49,9 @@ package.json
 }
 ```
 
----
+## </details>
 
 #### FS
-
-File System
 
 ```
 https://nodejs.org/dist/latest-v18.x/docs/api/fs.html
@@ -64,7 +63,7 @@ Create file name : demo.txt
 
 ---
 
-index.js
+<details><summary>index.js</summary>
 
 ```
 const fs = require("fs");
@@ -73,6 +72,8 @@ const txt = fs.readFileSync("./01_/demo.txt");
 
 console.log(txt);
 ```
+
+</details>
 
 Result after run : "ReferenceError: require is not defined in ES module scope, you can use import instead
 This file is being treated as an ES module because it has a '.js' file extension and '/home/solokope/Desktop/hindiMERN/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension."
@@ -96,7 +97,8 @@ Result
 ---
 
 utf-8
-index.js
+
+<details><summary>index.js</summary>
 
 ```
 const fs = require("fs");
@@ -106,9 +108,13 @@ const txt = fs.readFileSync("./01_/demo.txt", "utf-8");
 console.log(txt);
 ```
 
+</details>
+
 ---
 
-index.js
+callback
+
+<details><summary>index.js</summary>
 
 ```
 const fs = require("fs");
@@ -119,9 +125,13 @@ fs.readFile("./01_/demo.txt", "utf-8", (err, txt) => {
 });
 ```
 
+</details>
+
 ---
 
-index.js
+Check performance
+
+<details><summary>index.js</summary>
 
 ```
 const fs = require("fs");
@@ -139,6 +149,10 @@ console.log(t2 - t1);
 
 //0.36363899894058704
 ```
+
+</details>
+
+<details><summary>index.js</summary>
 
 ```
 const fs = require("fs");
@@ -160,7 +174,7 @@ console.log(t2 - t1);
 //2.0592769999057055
 ```
 
----
+</details>
 
 #### NPM
 
@@ -191,7 +205,7 @@ Notice at file name "package.json"
 }
 ```
 
-index.js
+<details><summary>index.js</summary>
 
 ```
 const express = require("express");
@@ -201,6 +215,8 @@ console.log("hello");
 const server = express();
 server.listen(8080);
 ```
+
+</details>
 
 ---
 
