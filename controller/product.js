@@ -1,12 +1,15 @@
 const fs = require("fs");
-// const index = fs.readFileSync("./02_/index.html", "utf-8");
-const data = JSON.parse(fs.readFileSync("./06_MongoDB/data.json", "utf-8"));
-const products = data.products;
+const model = require("../model/product");
+const Product = model.Product;
 
-exports.createProduct = (req, res) => {
-  console.log(req.body);
-  products.push(req.body);
-  res.status(201).json(req.body);
+// Notice
+exports.createProduct = async function createProduct(req, res) {
+  const product = new Product(req.body);
+
+  product.save((err, doc) => {
+    console.log({ err, doc });
+    res.status(201).json(doc);
+  });
 };
 
 exports.getAllProduct = (req, res) => {

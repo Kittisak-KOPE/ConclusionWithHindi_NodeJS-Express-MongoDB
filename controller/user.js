@@ -1,6 +1,6 @@
 const fs = require("fs");
 // const index = fs.readFileSync("./02_/index.html", "utf-8");
-const data = JSON.parse(fs.readFileSync("./06_MongoDB/data.json", "utf-8"));
+const data = JSON.parse(fs.readFileSync("./06_/data.json", "utf-8"));
 const users = data.users;
 
 exports.createUser = (req, res) => {
