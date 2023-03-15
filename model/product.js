@@ -2,14 +2,22 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose; // Notice
 
 const productSchema = new Schema({
-  title: String,
+  title: { type: String, require: true, unique: true },
   description: String,
-  price: Number,
-  discountPercentage: Number,
-  rating: Number,
-  brand: String,
-  category: String,
-  thumbnail: String,
+  price: { type: Number, min: [0, "wrong min price"] },
+  discountPercentage: {
+    type: Number,
+    min: [0, "wrong min discount"],
+    max: [50, "wrong max discount"],
+  },
+  rating: {
+    type: Number,
+    min: [0, "wrong min rating"],
+    max: [5, "wrong max rating"],
+  },
+  brand: { type: String, require: true },
+  category: { type: String, require: true },
+  thumbnail: { type: String, require: true },
   images: [String],
 });
 
